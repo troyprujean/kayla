@@ -1,0 +1,123 @@
+* {
+    /* Some CSS resets */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CSS variables */
+:root {
+    --content-height: calc(100vh - 200px - 60px - 200px); /*vh = vertical height (100 is 100 percent of viewport)*/
+    --nav-height: 60px;
+}
+
+.my-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 200px var(--nav-height) var(--content-height) 200px;
+    grid-gap: 0;
+    grid-template-areas: "header header" "nav nav" "section aside" "footer footer";
+}
+
+header {
+    background-color: yellow;
+    grid-area: header;
+
+    display: grid;
+    justify-content: center; /*horizontal alignment */
+    align-content: center; /*vertical alignment */
+
+    font-size: 3rem; /* makes font 3 times size of initial font */
+}
+
+nav {
+    background-color: aqua;
+    grid-area: nav;
+}
+
+section {
+    background-color: green;
+    grid-area: section;
+    padding: 20px;
+}
+
+article {
+    font-size:1.2rem;
+    color: lightcyan;
+}
+
+aside {
+    background-color: purple;
+    grid-area: aside;
+}
+
+footer {
+    background-color: darkgrey;
+    grid-area: footer;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: 3rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* navigation */
+
+/* only targets list inside nav tag */
+nav > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*repeats 4x 1fr*/
+    height: var(--nav-height);
+    background-color: darkorange;
+    list-style-type: none;
+}
+
+nav > ul > li {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+nav > ul > li:hover {
+    background-color: lightgreen;
+}
+
+nav > ul > li > a {
+    text-decoration: none; /* removes underline */
+    color: white;
+}
+
+nav > ul > li > a:hover {
+    color: dodgerblue;
+}
+
+@media screen and (max-width:414px) {
+
+
+    :root {
+        --nav-height: 240px; /*stack nav items on top of each other */
+    }
+
+    .my-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px minmax(300px, 1fr) 200px var(--nav-height) 200px;
+        grid-template-areas: "header" "section" "aside" "nav" "footer";
+    }
+
+    nav > ul {
+        grid-template-columns: 1fr; /*repeats 4x 1fr*/
+        height: var(--nav-height);
+        grid-auto-rows: 60px;
+    }
+
+}
+
