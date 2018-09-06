@@ -193,3 +193,22 @@ footer {
     }
 
 }
+
+@media screen and (max-width:1600px) {
+    .my-container {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-template-columns: 2fr;
+        grid-template-rows: 400px 100px var(--nav-height) 500px 200px 200px 40px;
+        grid-template-areas: "header header" "social social" "nav nav" "hero hero" "icon icon" "photo photo" "footer footer";
+    }
+
+    header {
+        justify-content: center; 
+    }
+
+    #social-media {
+        justify-self: center;
+    }
+}
