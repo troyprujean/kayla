@@ -25,7 +25,7 @@
 header {
     grid-area: header;
     display: grid;
-    justify-content: left; /*horizontal alignment */
+    justify-content: center; /*horizontal alignment */
     align-content: center; /*vertical alignment */
     /*font-size: 3rem; /* makes font 3 times size of initial font */
 }
@@ -166,7 +166,6 @@ footer {
     }
 
     .my-container {
-        width: 100%;
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 1fr;
@@ -196,7 +195,6 @@ footer {
 
 @media screen and (max-width:1600px) {
     .my-container {
-        width: 100%;
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 2fr;
