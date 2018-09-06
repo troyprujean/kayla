@@ -44,7 +44,7 @@ nav {
 /* only targets list inside nav tag */
 nav > ul {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /*repeats 4x 1fr*/
+    grid-template-columns: repeat(5, 1fr); /*repeats 5x 1fr*/
     height: var(--nav-height);
     background-color: #3B4476;
     list-style-type: none;
@@ -166,6 +166,7 @@ footer {
     }
 
     .my-container {
+        width: 100%;
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 1fr;
