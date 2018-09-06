@@ -4,7 +4,7 @@
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* CSS variables */
@@ -32,8 +32,7 @@ header {
 }
 
 header > img {
-    height: 100%;
-    width: auto;
+    max-width: 100%
 }
 
 /* Navigation */
