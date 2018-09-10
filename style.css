@@ -12,12 +12,13 @@
 :root {
     /*--hero-height: calc(100vh - 200px - 200px - 200px - 40px); /*vh = vertical height (100 is 100 percent of viewport)*/
     --nav-height: 40px;
+    --icon-height: 300px;
 }
 
 .my-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 700px 300px 200px 40px;
+    grid-template-rows: 100px 100px 700px var(--icon-height) 200px 40px;
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "hero hero hero hero" "icon icon icon icon" "photo photo photo photo" "footer footer footer footer";
     margin-left: 10%;
@@ -178,13 +179,14 @@ footer {
 
     :root {
         --nav-height: 300px; /*stack nav items on top of each other */
+        --icon-height: 1200px;
     }
 
     .my-container {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 1fr;
-        grid-template-rows: 75px 300px var(--nav-height) 500px 300px 200px 40px;
+        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
         grid-template-areas: "social" "header" "nav" "hero" "icon" "photo" "footer";
     }
 
@@ -200,7 +202,7 @@ footer {
 
     #icon-images {
         grid-template-columns: 1fr;
-        height: 1200px;
+        height: var(--icon-height);
         grid-auto-rows: 300px;
     }
 
@@ -216,18 +218,24 @@ footer {
 
 }
 
-@media screen and (max-width:1200px) {
+/* @media screen and (max-width:1200px) {
+
+    :root {
+        --nav-height: 300px; 
+        --icon-height: 600px;
+    }
+
     .my-container {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) 500px 300px 200px 40px;
+        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
         grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "photo photo" "footer footer";
     }
 
     #icon-images {
         grid-template-columns: 2fr;
-        height: 600px;
+        height: var(--icon-height);
         grid-auto-rows: 300px;
     }
 
@@ -239,5 +247,5 @@ footer {
     #social-media {
         justify-self: center;
         align-self: center;
-    }
+    } */
 }
