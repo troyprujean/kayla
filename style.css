@@ -23,6 +23,9 @@
     grid-template-areas: "header social social social" "header nav nav nav" "hero hero hero hero" "icon icon icon icon" "photo photo photo photo" "footer footer footer footer";
     margin-left: 10%;
     margin-right: 10%;
+    min-height: 100vh;
+    max-height: calc(100px + 100px + 700px + var(--icon-height) + 200px + 40px);
+    overflow-y: hidden;
 }
 
 header {
@@ -30,7 +33,6 @@ header {
     display: grid;
     justify-content: center; /*horizontal alignment */
     align-content: center; /*vertical alignment */
-    /*font-size: 3rem; /* makes font 3 times size of initial font */
 }
 
 header > img {
@@ -144,18 +146,21 @@ nav > ul > li > a {
     display: grid;
     grid-area: icon;
     grid-template-columns: repeat(4, 1fr); /*repeats 4x 1fr*/
-    list-style-type: none;
     text-align: center;
-    justify-content: center;
+}
+
+.icon-image {
+    align-self: center;
 }
 
 .icon-image > h2 {
     font-size: 1.5rem;
+    color: #3B4476;
 }
 
-.icon-image > img {
+/* .icon-image > img {
     border-radius: 50%;
-}
+} */
 
 /* Photos on homepage */
 #photo-images {
@@ -167,15 +172,56 @@ footer {
     background-color: #3B4476;
     color: white;
     grid-area: footer;
-
     display: grid;
     justify-content: center;
     align-content: center;
-    height: var(--nav-height);
+    height: 40px;
 }
 
-@media screen and (max-width:800px) {
 
+@media screen and (max-width:1200px) {
+
+    :root {
+        --nav-height: 300px; 
+        --icon-height: 600px;
+    }
+
+    .my-container {
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-template-columns: 2fr;
+        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 200px + 40px);
+        grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "photo photo" "footer footer";
+    }
+
+    nav > ul {
+        grid-template-columns: 1fr; 
+        height: var(--nav-height);
+        grid-auto-rows: 60px;
+    }
+
+    #icon-images {
+        grid-template-columns: 1fr 1fr;
+        height: var(--icon-height);
+        grid-auto-rows: 300px;
+    }
+
+    .icon-image {
+        border-bottom: 6px solid lightslategray;
+    }
+
+    header {
+        justify-content: center; 
+    }
+
+    #social-media {
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width:700px) {
 
     :root {
         --nav-height: 300px; /*stack nav items on top of each other */
@@ -187,6 +233,7 @@ footer {
         margin-right: 0px;
         grid-template-columns: 1fr;
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 200px + 40px);
         grid-template-areas: "social" "header" "nav" "hero" "icon" "photo" "footer";
     }
 
@@ -206,8 +253,8 @@ footer {
         grid-auto-rows: 300px;
     }
 
-    footer {
-        height: 40px;
+    .icon-image {
+        border-bottom: 6px solid lightslategray;
     }
 
     nav > ul {
@@ -215,37 +262,4 @@ footer {
         height: var(--nav-height);
         grid-auto-rows: 60px;
     }
-
-}
-
-/* @media screen and (max-width:1200px) {
-
-    :root {
-        --nav-height: 300px; 
-        --icon-height: 600px;
-    }
-
-    .my-container {
-        margin-left: 0px;
-        margin-right: 0px;
-        grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
-        grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "photo photo" "footer footer";
-    }
-
-    #icon-images {
-        grid-template-columns: 2fr;
-        height: var(--icon-height);
-        grid-auto-rows: 300px;
-    }
-
-
-    header {
-        justify-content: center; 
-    }
-
-    #social-media {
-        justify-self: center;
-        align-self: center;
-    } */
 }
