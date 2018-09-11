@@ -10,21 +10,20 @@
 
 /* CSS variables */
 :root {
-    /*--hero-height: calc(100vh - 200px - 200px - 200px - 40px); /*vh = vertical height (100 is 100 percent of viewport)*/
     --nav-height: 40px;
-    --icon-height: 300px;
+    --icon-height: 400px;
 }
 
 .my-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 700px var(--icon-height) 200px 40px;
+    grid-template-rows: 100px 100px 700px var(--icon-height) 40px;
     grid-gap: 0;
-    grid-template-areas: "header social social social" "header nav nav nav" "hero hero hero hero" "icon icon icon icon" "photo photo photo photo" "footer footer footer footer";
+    grid-template-areas: "header social social social" "header nav nav nav" "hero hero hero hero" "icon icon icon icon" "footer footer footer footer";
     margin-left: 10%;
     margin-right: 10%;
     min-height: 100vh;
-    max-height: calc(100px + 100px + 700px + var(--icon-height) + 200px + 40px);
+    max-height: calc(100px + 100px + 700px + var(--icon-height) + 40px);
     overflow-y: hidden;
 }
 
@@ -59,6 +58,7 @@ nav > ul > li {
     display: grid;
     justify-content: center;
     align-content: center;
+    padding: 0;
 }
 
 nav > ul > li:hover {
@@ -151,20 +151,25 @@ nav > ul > li > a {
 
 .icon-image {
     align-self: center;
+    justify-self: center;
+}
+
+.icon-image-frame > img {
+    display: block;
+    margin: auto auto;
+}
+
+.icon-image-frame {
+    display: grid;
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    border: 5px solid #3B4476;
 }
 
 .icon-image > h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #3B4476;
-}
-
-/* .icon-image > img {
-    border-radius: 50%;
-} */
-
-/* Photos on homepage */
-#photo-images {
-    grid-area: photo;
 }
 
 /* Footer */
@@ -179,36 +184,25 @@ footer {
 }
 
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1400px) {
 
     :root {
-        --nav-height: 300px; 
-        --icon-height: 600px;
+        --icon-height: 800px;
     }
 
     .my-container {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
-        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 200px + 40px);
-        grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "photo photo" "footer footer";
-    }
-
-    nav > ul {
-        grid-template-columns: 1fr; 
-        height: var(--nav-height);
-        grid-auto-rows: 60px;
+        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
+        grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "footer footer";
     }
 
     #icon-images {
         grid-template-columns: 1fr 1fr;
         height: var(--icon-height);
-        grid-auto-rows: 300px;
-    }
-
-    .icon-image {
-        border-bottom: 6px solid lightslategray;
+        grid-auto-rows: 400px;
     }
 
     header {
@@ -225,16 +219,16 @@ footer {
 
     :root {
         --nav-height: 300px; /*stack nav items on top of each other */
-        --icon-height: 1200px;
+        --icon-height: 1600px;
     }
 
     .my-container {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 1fr;
-        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 200px 40px;
-        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 200px + 40px);
-        grid-template-areas: "social" "header" "nav" "hero" "icon" "photo" "footer";
+        grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
+        grid-template-areas: "social" "header" "nav" "hero" "icon" "footer";
     }
 
     header {
@@ -250,11 +244,7 @@ footer {
     #icon-images {
         grid-template-columns: 1fr;
         height: var(--icon-height);
-        grid-auto-rows: 300px;
-    }
-
-    .icon-image {
-        border-bottom: 6px solid lightslategray;
+        grid-auto-rows: 400px;
     }
 
     nav > ul {
