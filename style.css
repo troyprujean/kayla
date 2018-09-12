@@ -12,6 +12,7 @@
 :root {
     --nav-height: 40px;
     --icon-height: 400px;
+    --article-height: calc(100vh - 200px - 40px)
 }
 
 .my-container {
@@ -43,6 +44,15 @@ header > img {
 nav {
     grid-area: nav;
     align-self: end;
+}
+
+#active {
+    background-color: whitesmoke;
+    border: 2px solid #3B4476;
+}
+
+#active > a {
+    color: #3B4476;
 }
 
 /* only targets list inside nav tag */
@@ -183,7 +193,76 @@ footer {
     height: 40px;
 }
 
+/* About page */
+.my-container-about-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px var(--article-height) 40px;
+    grid-gap: 0;
+    grid-template-areas: "header social social social" "header nav nav nav" "article article article article" "footer footer footer footer";
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+}
 
+article {
+    display: grid;
+    grid-area: article;
+}
+
+article > p {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Gallery */
+.my-container-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 200px 200px 40px;
+    grid-gap: 0;
+    grid-template-areas: "header social social social" "header nav nav nav" "gallery gallery gallery gallery" "gallery gallery gallery gallery" "footer footer footer footer";
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 100vh;
+    max-height: calc(100px + 100px + 400px + 400px + 40px);
+    overflow-y: hidden;
+}
+
+#image-gallery {
+    display: grid;
+    grid-area: gallery;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+.gallery:hover {
+    border: 1px solid #777;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Responsive design for mobile phones and tablets */
+
+/* Tablets */
 @media screen and (max-width:1400px) {
 
     :root {
@@ -197,6 +276,15 @@ footer {
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
         grid-template-areas: "social social" "header header" "nav nav" "hero hero" "icon icon" "footer footer";
+    }
+
+    .my-container-about-services {
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-template-columns: 2fr;
+        grid-template-rows: 75px 300px var(--nav-height) var(--article-height) 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + var(--article-height) + 40px);
+        grid-template-areas: "social social" "header header" "nav nav" "article article" "footer footer";
     }
 
     #icon-images {
@@ -215,11 +303,13 @@ footer {
     }
 }
 
+/* Mobile Phones */
 @media screen and (max-width:700px) {
 
     :root {
         --nav-height: 300px; /*stack nav items on top of each other */
         --icon-height: 1600px;
+        --article-height: 500px;
     }
 
     .my-container {
@@ -229,6 +319,15 @@ footer {
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
         grid-template-areas: "social" "header" "nav" "hero" "icon" "footer";
+    }
+
+    .my-container-about-services {
+        margin-left: 0px;
+        margin-right: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 75px 300px var(--nav-height) var(--article-height) 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + var(--article-height) + 40px);
+        grid-template-areas: "social" "header" "nav" "article" "footer";
     }
 
     header {
