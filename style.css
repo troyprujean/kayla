@@ -12,7 +12,7 @@
 :root {
     --nav-height: 40px;
     --icon-height: 400px;
-    --article-height: calc(100vh - 200px - 40px)
+    --article-height: calc(100vh - 100px - 200px - 40px)
 }
 
 .my-container {
@@ -193,13 +193,25 @@ footer {
     height: 40px;
 }
 
+.heading {
+    display: grid;
+    grid-area: heading;
+    justify-self: center;
+    align-self: center;
+}
+
+.heading > h1 {
+    font-size: 3rem;
+    color: #3B4476;
+}
+
 /* About page */
 .my-container-about-services {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px var(--article-height) 40px;
+    grid-template-rows: 100px 100px 100px var(--article-height) 40px;
     grid-gap: 0;
-    grid-template-areas: "header social social social" "header nav nav nav" "article article article article" "footer footer footer footer";
+    grid-template-areas: "header social social social" "header nav nav nav" "heading heading heading heading" "article article article article" "footer footer footer footer";
     margin-left: 10%;
     margin-right: 10%;
     min-height: 100vh;
@@ -213,9 +225,11 @@ article {
 }
 
 article > p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
-    padding: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
 }
 
 /* Gallery */
@@ -228,7 +242,6 @@ article > p {
     margin-left: 10%;
     margin-right: 10%;
     min-height: 100vh;
-    max-height: calc(100px + 100px + 400px + 400px + 40px);
     overflow-y: hidden;
 }
 
@@ -284,24 +297,24 @@ article > p {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) var(--article-height) 40px;
-        max-height: calc(75px + 300px + var(--nav-height) + var(--article-height) + 40px);
-        grid-template-areas: "social social" "header header" "nav nav" "article article" "footer footer";
+        grid-template-rows: 75px 300px var(--nav-height) 100px auto 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 100px + auto + 40px);
+        grid-template-areas: "social social" "header header" "nav nav" "heading heading" "article article" "footer footer";
     }
 
     .my-container-gallery {
         grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) 1200px 40px;      
+        grid-template-rows: 75px 300px var(--nav-height) 1000px 40px;      
         grid-template-areas: "social social" "header header" "nav nav" "gallery gallery" "footer footer";
         margin-left: 0px;
         margin-right: 0px;
-        max-height: calc(75px + 300px + var(--nav-height) + 1200px + 40px);
+        max-height: calc(75px + 300px + var(--nav-height) + 1000px + 40px);
     }
 
     #image-gallery {
         grid-template-columns: 1fr 1fr;
-        height: 1200px;
-        grid-auto-rows: 300px;
+        height: 1000px;
+        grid-auto-rows: 500px;
     }
 
     #icon-images {
@@ -342,24 +355,29 @@ article > p {
         margin-left: 0px;
         margin-right: 0px;
         grid-template-columns: 1fr;
-        grid-template-rows: 75px 300px var(--nav-height) var(--article-height) 40px;
-        max-height: calc(75px + 300px + var(--nav-height) + var(--article-height) + 40px);
-        grid-template-areas: "social" "header" "nav" "article" "footer";
+        grid-template-rows: 75px 300px var(--nav-height) 100px auto 40px;
+        max-height: calc(75px + 300px + var(--nav-height) + 100px + auto + 40px);
+        grid-template-areas: "social" "header" "nav" "heading" "article" "footer";
+    }
+
+    article > p {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .my-container-gallery {
         grid-template-columns: 1fr;
-        grid-template-rows: 75px 300px var(--nav-height) 2400px 40px;      
+        grid-template-rows: 75px 300px var(--nav-height) 2000px 40px;      
         grid-template-areas: "social" "header" "nav" "gallery" "footer";
         margin-left: 0px;
         margin-right: 0px;
-        max-height: calc(75px + 300px + var(--nav-height) + 2400px + 40px);
+        max-height: calc(75px + 300px + var(--nav-height) + 2000px + 40px);
     }
 
     #image-gallery {
         grid-template-columns: 1fr;
-        height: 2400px;
-        grid-auto-rows: 300px;
+        height: 2000px;
+        grid-auto-rows: 500px;
     }
 
     header {
