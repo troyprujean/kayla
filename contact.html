@@ -49,10 +49,43 @@
     <div class="heading"><h1>Contact Us</h1></div>
 
     <!-- Contact form -->
-    <form action="null">
-        <p>Insert contact form</p>
-    </form>
+    <div class="form-container">
+        <form action="null">
+            <label for="name"><b>Name</b><div class="required">*</div></label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+      
+            <label for="phone"><b>Phone</b><div class="required">*</div></label>
+            <input type="number" id="phone" name="phone" placeholder="Your phone number..">
+      
+            <label for="email"><b>Email</b><div class="required">*</div></label>
+            <input type="text" id="email" name="email" placeholder="Your email address..">
 
+            <label for="company"><b>Company</b></label>
+            <input type="text" id="company" name="company" placeholder="Your company name..">
+      
+            <label for="message"><b>Message</b><div class="required">*</div></label>
+            <textarea id="message" name="message" placeholder="Your message.." style="height:100px"></textarea>
+      
+            <div id="submit-button">
+                <input type="submit" value="Submit"><div class="required">&nbsp;&nbsp;&nbsp;&nbsp;* Required Fields</div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Aside section -->
+    <aside>
+        <h2>Alternative Contact</h2>
+        <p>
+            <br>
+            Kayla
+            <br>
+            Phone number
+            <br>
+            Email address
+        </p>
+        <img src="http://placekitten.com/g/320/250" alt="Cartoon image of cleaning lady" width="320" height="250">
+    </aside>
+    
     <!-- Footer -->
     <footer>&copy;2018 Kayla's Cleaning Services</footer>
 </div>
