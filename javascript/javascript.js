@@ -12,6 +12,6 @@ hover.map(m => {
         this.children[0].classList.remove('hovertext')
     })
     m.addEventListener('click', function () {
-    window.location.href = `/${this.children[0].getAttribute('href')}`;
+    window.location.href = `${this.children[0].getAttribute('href')}`;
     })
 })

@@ -21,8 +21,6 @@
     grid-template-rows: 100px 100px 700px var(--icon-height) 40px;
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "hero hero hero hero" "icon icon icon icon" "footer footer footer footer";
-    margin-left: 10%;
-    margin-right: 10%;
     min-height: 100vh;
     max-height: calc(100px + 100px + 700px + var(--icon-height) + 40px);
     overflow-y: hidden;
@@ -177,14 +175,14 @@ nav > ul > li > a {
 
 .icon-image-frame {
     display: grid;
-    height: 280px;
-    width: 280px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
-    border: 5px solid #3B4476;
+    border: 2px solid #3B4476;
 }
 
 .icon-image > h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #3B4476;
 }
 
@@ -207,7 +205,7 @@ footer {
 }
 
 .heading > h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #3B4476;
 }
 
@@ -218,8 +216,6 @@ footer {
     grid-template-rows: 100px 100px 100px var(--article-height) 40px;
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "heading heading heading heading" "article article article article" "footer footer footer footer";
-    margin-left: 10%;
-    margin-right: 10%;
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: hidden;
@@ -231,7 +227,7 @@ article {
 }
 
 article > p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
@@ -245,8 +241,6 @@ article > p {
     grid-template-rows: 100px 100px 100px 700px 40px;
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "heading heading heading heading" "gallery gallery gallery gallery" "footer footer footer footer";
-    margin-left: 10%;
-    margin-right: 10%;
     min-height: 100vh;
     overflow-y: hidden;
 }
@@ -288,8 +282,6 @@ article > p {
     grid-template-rows: 100px 100px 100px auto 40px;
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "heading heading heading heading" "form form aside aside" "footer footer footer footer";
-    margin-left: 10%;
-    margin-right: 10%;
     min-height: 100vh;
     overflow-y: hidden;
 }
@@ -317,6 +309,7 @@ input[type=number], select, textarea {
 }
 
 input[type=submit] {
+    display: grid;
     background-color: #3B4476;
     color: white;
     padding: 12px 20px;
@@ -347,9 +340,13 @@ input[type=submit]:hover {
 }
 
 .form-container {
+    display: grid;
     grid-area: form;
     padding: 20px;
     color: #3B4476;
+    max-width: 750px;
+    align-self: center;
+    justify-self: center;
 }
 
 aside {
@@ -378,17 +375,6 @@ aside > img {
 
 /* Responsive design for mobile phones and tablets */
 
-/* Gallery Page */
-@media screen and (max-width:1700px) {
-    .my-container-gallery {
-        grid-template-columns: 2fr;
-        grid-template-rows: 75px 300px var(--nav-height) 100px 800px 40px;      
-        grid-template-areas: "social social" "header header" "nav nav" "heading heading" "gallery gallery" "footer footer";
-        margin-left: 0px;
-        margin-right: 0px;
-        max-height: calc(75px + 300px + var(--nav-height) + 100px + 800px + 40px);
-    }
-}
 
 /* Tablets */
 @media screen and (max-width:1400px) {
@@ -398,8 +384,6 @@ aside > img {
     }
 
     .my-container {
-        margin-left: 0px;
-        margin-right: 0px;
         grid-template-columns: 2fr;
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
@@ -407,8 +391,6 @@ aside > img {
     }
 
     .my-container-about-services {
-        margin-left: 0px;
-        margin-right: 0px;
         grid-template-columns: 2fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px auto 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + auto + 40px);
@@ -419,8 +401,6 @@ aside > img {
         grid-template-columns: 2fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px 1400px 40px;      
         grid-template-areas: "social social" "header header" "nav nav" "heading heading" "gallery gallery" "footer footer";
-        margin-left: 0px;
-        margin-right: 0px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + 1400px + 40px);
     }
     
@@ -428,8 +408,6 @@ aside > img {
         grid-template-columns: 2fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px 650px 650px 40px;
         grid-template-areas: "social social" "header header" "nav nav" "heading heading" "form form" "aside aside" "footer footer";
-        margin-left: 0px;
-        margin-right: 0px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + 650px + 650px + 40px);
     }
 
@@ -479,8 +457,6 @@ aside > img {
     }
 
     .my-container {
-        margin-left: 0px;
-        margin-right: 0px;
         grid-template-columns: 1fr;
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 500px + var(--icon-height) + 40px);
@@ -488,8 +464,6 @@ aside > img {
     }
 
     .my-container-about-services {
-        margin-left: 0px;
-        margin-right: 0px;
         grid-template-columns: 1fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px auto 40px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + auto + 40px);
@@ -505,8 +479,6 @@ aside > img {
         grid-template-columns: 1fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px 3200px 40px;      
         grid-template-areas: "social" "header" "nav" "heading" "gallery" "footer";
-        margin-left: 0px;
-        margin-right: 0px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + 3200px + 40px);
     }
 
@@ -514,8 +486,6 @@ aside > img {
         grid-template-columns: 1fr;
         grid-template-rows: 75px 300px var(--nav-height) 100px 650px 650px 40px;
         grid-template-areas: "social" "header" "nav" "heading" "form" "aside" "footer";
-        margin-left: 0px;
-        margin-right: 0px;
         max-height: calc(75px + 300px + var(--nav-height) + 100px + 650px + 650px + 40px);
     }
 
