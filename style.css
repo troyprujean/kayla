@@ -319,20 +319,51 @@ input[type=submit] {
 }
 
 input[type=text]:hover {
-    border: 3px solid lightslategray;
+    border: 2px solid lightslategray;
 }
 
 input[type=number]:hover {
-    border: 3px solid lightslategray;
+    border: 2px solid lightslategray;
 }
 
 #message:hover {
-    border: 3px solid lightslategray;
+    border: 2px solid lightslategray;
 }
 
 .required {
     display: inline-block;
     color: red;
+    font-weight: bold;
+}
+
+#required-button {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
+#name-error {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
+#phone-error {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
+#email-error {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
+#message-error {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
 }
 
 input[type=submit]:hover {
