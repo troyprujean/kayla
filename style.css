@@ -12,7 +12,7 @@
 :root {
     --nav-height: 40px;
     --icon-height: 400px;
-    --article-height: calc(100vh - 100px - 200px - 40px)
+    --article-height: auto;
 }
 
 .my-container {
@@ -217,7 +217,6 @@ footer {
     grid-gap: 0;
     grid-template-areas: "header social social social" "header nav nav nav" "heading heading heading heading" "article article article article" "footer footer footer footer";
     min-height: 100vh;
-    max-height: 100vh;
     overflow-y: hidden;
 }
 
@@ -226,7 +225,7 @@ article {
     grid-area: article;
 }
 
-article > p {
+article > p, article > p > b{
     font-size: 1.5rem;
     text-align: center;
     padding-left: 40px;
@@ -260,7 +259,7 @@ article > p {
 }
 
 .gallery:hover {
-    border: 5px solid #3B4476;
+    border: 1px solid #3B4476;
 }
 
 .gallery img {
