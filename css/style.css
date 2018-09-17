@@ -34,8 +34,8 @@ header {
 }
 
 header > img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: auto;
+    max-height: 200px;
 }
 
 /* Navigation */
@@ -122,7 +122,7 @@ nav > ul > li > a {
 /* Hero Image */
 .hero-image {
     grid-area: hero;
-    background-image: url("images/hero.jpg");
+    background-image: url("../images/hero.jpg");
     height: 100%;
     width: 100%;
     background-position: center;
@@ -413,6 +413,11 @@ aside > img {
         --icon-height: 800px;
     }
 
+    header > img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
     .my-container {
         grid-template-columns: 2fr;
         grid-template-rows: 75px 300px var(--nav-height) 500px var(--icon-height) 40px;
@@ -484,6 +489,11 @@ aside > img {
         --nav-height: 300px; /*stack nav items on top of each other */
         --icon-height: 1600px;
         --article-height: 500px;
+    }
+
+    header > img {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .my-container {
